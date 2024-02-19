@@ -24,7 +24,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      let count = parseInt(getCookie("count")) 0; // corrected line
+      let count = parseInt(getCookie("count")) || 0; // corrected line
       document.getElementById("count").innerText = count;
 
       document.getElementById("increaseBtn").addEventListener("click", function() {
@@ -46,7 +46,7 @@
           date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
           expires = "; expires=" + date.toUTCString();
         }
-        document.cookie = name + "=" + (value "") + expires + "; path=/"; // corrected line
+        document.cookie = name + "=" + value + expires + "; path=/"; // corrected line
       }
       
       function getCookie(name) {

@@ -25,23 +25,22 @@ button {
 
   <script src="script.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-  let count = parseInt(getCookie("count")) 0; // بررسی آیا کوکی موجود است، اگر نه مقدار ۰ را بگیر.
+document.addEventListener("DOMContentLoaded", function() {
+  let count = parseInt(getCookie("count")) 0; // corrected line
   document.getElementById("count").innerText = count;
 
   document.getElementById("increaseBtn").addEventListener("click", function() {
     count++;
     document.getElementById("count").innerText = count;
-    setCookie("count", count, 30); // تنظیم کوکی برای ذخیره مقدار
+    setCookie("count", count, 30);
   });
 
   document.getElementById("decreaseBtn").addEventListener("click", function() {
     count--;
     document.getElementById("count").innerText = count;
-    setCookie("count", count, 30); // تنظیم کوکی برای ذخیره مقدار
+    setCookie("count", count, 30);
   });
 
-  // توابع تنظیم و دریافت کوکی
   function setCookie(name, value, days) {
     let expires = "";
     if (days) {
@@ -49,7 +48,7 @@ button {
       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
       expires = "; expires=" + date.toUTCString();
     }
-    document.cookie = name + "=" + (value "")  + expires + "; path=/";
+    document.cookie = name + "=" + (value "") + expires + "; path=/"; // corrected line
   }
   
   function getCookie(name) {

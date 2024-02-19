@@ -6,15 +6,15 @@
   <title>Clicker</title>
   <style>
     body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
 
-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  margin: 10px;
-}
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 10px;
+    }
   </style>
 </head>
 <body>
@@ -23,43 +23,43 @@ button {
   <p id="count">0</p>
 
   <script>
-document.addEventListener("DOMContentLoaded", function() {
-  let count = parseInt(getCookie("count")) 0; // corrected line
-  document.getElementById("count").innerText = count;
+    document.addEventListener("DOMContentLoaded", function() {
+      let count = parseInt(getCookie("count")) 0; // corrected line
+      document.getElementById("count").innerText = count;
 
-  document.getElementById("increaseBtn").addEventListener("click", function() {
-    count++;
-    document.getElementById("count").innerText = count;
-    setCookie("count", count, 30);
-  });
+      document.getElementById("increaseBtn").addEventListener("click", function() {
+        count++;
+        document.getElementById("count").innerText = count;
+        setCookie("count", count, 30);
+      });
 
-  document.getElementById("decreaseBtn").addEventListener("click", function() {
-    count--;
-    document.getElementById("count").innerText = count;
-    setCookie("count", count, 30);
-  });
+      document.getElementById("decreaseBtn").addEventListener("click", function() {
+        count--;
+        document.getElementById("count").innerText = count;
+        setCookie("count", count, 30);
+      });
 
-  function setCookie(name, value, days) {
-    let expires = "";
-    if (days) {
-      let date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value "") + expires + "; path=/"; // corrected line
-  }
-  
-  function getCookie(name) {
-    let nameEQ = name + "=";
-    let ca = document.cookie.split(';');
-    for(let i=0; i < ca.length; i++) {
-      let c = ca[i];
-      while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-      if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-  }
-});
+      function setCookie(name, value, days) {
+        let expires = "";
+        if (days) {
+          let date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value "") + expires + "; path=/"; // corrected line
+      }
+      
+      function getCookie(name) {
+        let nameEQ = name + "=";
+        let ca = document.cookie.split(';');
+        for(let i=0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+      }
+    });
   </script>
 </body>
 </html>
